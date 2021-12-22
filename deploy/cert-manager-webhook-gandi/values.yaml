@@ -12,6 +12,7 @@ fullnameOverride: ''
 service:
   type: ClusterIP
   port: 443
+containerport: 8443
 features:
   apiPriorityAndFairness: false
 resources: {}
