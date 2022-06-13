@@ -25,6 +25,7 @@ const (
 var GroupName = os.Getenv("GROUP_NAME")
 
 func main() {
+	klog.InitFlags(nil)
 	if GroupName == "" {
 		panic("GROUP_NAME must be specified")
 	}
