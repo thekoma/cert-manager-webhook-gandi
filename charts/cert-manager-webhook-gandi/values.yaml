@@ -10,8 +10,8 @@ certManager:
 image:
   # -- Image name
   repository: ghcr.io/sintef/cert-manager-webhook-gandi
-  # -- Image tag
-  tag: 0.3.0
+  # -- Image tag (default to Chart's appVersion)
+  tag: ""
   # -- Image pull policy
   pullPolicy: IfNotPresent
 # -- Set to override the name
@@ -33,3 +33,7 @@ resources: {}
 nodeSelector: {}
 tolerations: []
 affinity: {}
+# -- Gandi Secret API key
+# -- To not store it in plain text, use sops or similar.
+# -- The secret is not created if not set.
+gandiApiToken: ""
