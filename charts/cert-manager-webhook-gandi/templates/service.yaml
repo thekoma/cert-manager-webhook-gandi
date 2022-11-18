@@ -13,5 +13,4 @@ spec:
       protocol: TCP
       name: https
   selector:
-    app: {{ include "cert-manager-webhook-gandi.name" . }}
-    release: {{ .Release.Name }}
+    {{- include "cert-manager-webhook-gandi.selectorLabels" . | nindent 4 }}
