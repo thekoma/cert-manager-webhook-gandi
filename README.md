@@ -1,9 +1,29 @@
-# ACME webhook for Gandi (cert-manager-webhook-gandi)
+# ACME webhook for Gandi (SINTEF fork)
+
 `cert-manager-webhook-gandi` is an ACME webhook for [cert-manager]. It provides an ACME (read: Let's Encrypt) webhook for [cert-manager], which allows to use a `DNS-01` challenge with [Gandi]. This allows to provide Let's Encrypt certificates to [Kubernetes] for service protocols other than HTTP and furthermore to request wildcard certificates. Internally it uses the [Gandi LiveDNS API] to communicate with Gandi.
+
+
+
+
+## What does the fork do?
+
+This repository is a fork of [bwolf/cert-manager-webhook-gandi] with the following changes:
+
+ - The dependencies have been updated to newer versions
+ - A few pending pull requests on the upstream repository have been merged
+ - The software container image is hosted on GitHub
+ - The Helm chart is hosted on GitHub
+
+## DNS-01 challenge ?
 
 Quoting the [ACME DNS-01 challenge]:
 
 > This challenge asks you to prove that you control the DNS for your domain name by putting a specific value in a TXT record under that domain name. It is harder to configure than HTTP-01, but can work in scenarios that HTTP-01 can’t. It also allows you to issue wildcard certificates. After Let’s Encrypt gives your ACME client a token, your client will create a TXT record derived from that token and your account key, and put that record at _acme-challenge.<YOUR_DOMAIN>. Then Let’s Encrypt will query the DNS system for that record. If it finds a match, you can proceed to issue a certificate!
+
+
+## Helm chart
+
+[Read the Helm chart documentation](charts/cert-manager-webhook-gandi/README.md).
 
 
 ## Building
@@ -15,7 +35,7 @@ Build the container image `cert-manager-webhook-gandi:latest`:
 ## Image
 Ready made images are hosted on Docker Hub ([image tags]). Use at your own risk:
 
-    bwolf/cert-manager-webhook-gandi
+    ghcr.io/sintef/cert-manager-webhook-gandi
 
 
 ### Release History
