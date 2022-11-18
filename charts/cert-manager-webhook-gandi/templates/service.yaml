@@ -9,7 +9,7 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: {{ .Values.containerport }}
+      targetPort: https
       protocol: TCP
       name: https
   selector:
