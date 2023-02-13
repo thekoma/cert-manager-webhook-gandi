@@ -22,3 +22,7 @@
 
 # Nix
 .envrc
+
+# Make artifacts
+_out
+_test
